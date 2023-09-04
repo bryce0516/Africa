@@ -21,19 +21,15 @@ struct ContentView: View {
           .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
         
         ForEach(animals) { animal in
-          AnimalListItemView(animal: animal)
+          NavigationLink(destination: AnimalDetailView(animal: animal)) {
+            AnimalListItemView(animal: animal)
+          }
+//          
         }
       }
       .navigationTitle("Africa")
       .navigationBarTitleDisplayMode(.large)
     }
-    //        VStack {
-    //            Image(systemName: "globe")
-    //                .imageScale(.large)
-    //                .foregroundColor(.accentColor)
-    //            Text("Content!")
-    //        }
-    //        .padding()
   }
 }
 
