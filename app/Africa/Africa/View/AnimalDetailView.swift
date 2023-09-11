@@ -71,10 +71,13 @@ struct AnimalDetailView: View {
         // MAP
         Group {
           HeadingView(headingImage: "map", headingText: "National Parks")
-          
+          InsetMapView()
         }
         // LINK
-        
+        Group {
+          HeadingView(headingImage: "books.vertical", headingText: "Learn more")
+          ExternelWeblinkView(animal: animal)
+        }.padding(.horizontal)
         
         //        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
       }
