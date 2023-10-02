@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct VideoListView: View {
+  // MARK: - PROPERTIES
+  
+  var videos: [Video] = Bundle.main.decode("videos.json")
+  
+  // MARK: - BODY
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+      NavigationView {
+        List {
+          ForEach(videos) { video in
+            VideoListItem(video: video)
+          } //: FOREACH
+        } //: LIST
+      }
     }
 }
 
