@@ -62,6 +62,7 @@ struct MotionAnimationView: View {
         }
 //        Text("Width: \(Int(geometry.size.width)) Height: \(Int(geometry.size.height))")
       }
+      .drawingGroup()
       
     }
   }//: GEOMETRY
