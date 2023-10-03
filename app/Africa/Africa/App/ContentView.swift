@@ -28,6 +28,16 @@ struct ContentView: View {
     )
     gridColumn = gridLayout.count
     
+    switch gridColumn {
+    case 1:
+      toolbarICon = "square.grid.2x2"
+    case 2:
+      toolbarICon = "square.grid.3x2"
+    case 3:
+      toolbarICon = "rectangle.grid.1x2"
+    default:
+      toolbarICon = "square.grid.2x2"
+    }
   }
   
   var body: some View {
@@ -82,7 +92,7 @@ struct ContentView: View {
               haptics.impactOccurred()
               gridSwitch()
             }, label: {
-              Image(systemName: "square.grid.2x2")
+              Image(systemName: toolbarICon)
                 .font(.title2)
                 .foregroundColor(
                   isGridViewActive ? .accentColor : .primary
